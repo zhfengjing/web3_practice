@@ -1,0 +1,98 @@
+.custom_layout{
+    width: 100vw;
+    height: 100vh;
+    padding: 0 2rem;
+    .custom_header{
+        color: white;
+        background: #117de2;
+    }
+    .custom_content{
+        // width: calc(100vw - 200px);
+        height: 100%;
+        background: white;
+        text-align: left;
+        line-height: 36px;
+        padding: 12px 24px;
+        
+        .wallet{
+            .create_account_btn{
+                margin-left: 24px;
+             }
+            .refresh_balance_btn{
+                margin-left: 12px;
+            }
+        }
+        
+        .account{
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 16px 24px;
+            margin: 24px 0;
+        }
+        .transfer_accounts{
+            line-height: 50px;
+        }
+        .mine{
+            line-height: 50px;
+            .mine_btn{
+                margin-left: 24px;
+            }
+        }
+        .block_chain{
+            header{
+                font-size: 20px;
+                font-weight: 600;
+                .refresh_btn{
+                    float: right;
+                }
+            }
+            .block_section{
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                line-height: 32px;
+                .left,.right{
+                    width: 50%;
+                    padding: 16px 24px;
+                    height: calc(100vh - 64px - 20px);
+                    overflow: auto;
+                    .ant-card{
+                        margin: 12px 0;
+                        overflow: hidden;
+                        .value{
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+                .left{
+                    border-right: 1px solid #ddd ;
+                }
+            }
+        }
+    }
+    .custom_subLayout{
+        height: calc(~'100vh - 64px');
+        
+        .custom_sider{
+            width: 25%;
+            height: 100%;
+            background: white;
+            .ant-menu-root{
+                height: 100%;
+                overflow: auto;
+            }
+        }
+        .custom_content{
+            // width: calc(100vw - 200px);
+             height: 100%;
+            background: white;
+            text-align: left;
+            line-height: 36px;
+            padding: 12px 24px;
+        }
+        
+    }
+
+}

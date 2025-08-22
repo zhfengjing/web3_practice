@@ -1,0 +1,15 @@
+{
+    "name": "my_blockchain_js",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "client": "cd front_end && npm run dev",
+        "client:build": "cd front_end && npm run build",
+        "server": "cd server && npm start",
+        "server:build": "cd server && npm run build",
+        "dev:full": "npx concurrently \"npm run client\" \"npm run server\""
+    },
+    "author": "zhangfengjing",
+    "license": "ISC",
+    "description": ""
+}

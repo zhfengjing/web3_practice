@@ -1,0 +1,45 @@
+Arguments: 
+  /usr/local/bin/node /Users/scenery/.yarn/bin/yarn.js config get registry
+
+PATH: 
+  /Users/scenery/Library/pnpm:/Users/scenery/.yarn/bin:/Users/scenery/.config/yarn/global/node_modules/.bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  20.18.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/scenery/Desktop/project/web3_housework/my_blockchain_js/package.json: Expected double-quoted property name in JSON at position 491
+      at JSON.parse (<anonymous>)
+      at /Users/scenery/.yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/scenery/.yarn/lib/cli.js:310:30)
+      at /Users/scenery/.yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "server",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "blockchain",
+      "server"
+    ],
+    "author": "zhangfengjing",
+    "license": "ISC",
+    "description": ""
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
