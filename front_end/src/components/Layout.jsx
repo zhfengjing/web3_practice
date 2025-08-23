@@ -11,9 +11,8 @@ import BlockChain from './BlockChain';
 import { getBlocks, getPendingTransactions } from '@/service/index';
 import './layout.less';
 
-const TabPane = Tabs.TabPane;
+// const TabPane = Tabs.TabPane;
 const { Header, Content } = Layout;
-
 
 function LayoutWrapper() {
     const [activeKey, setActiveKey] = useState('wallet');
@@ -42,8 +41,8 @@ function LayoutWrapper() {
         {
             label: 'TransferAccounts',
             key: 'transferAccounts',
-            children: <TransferAccounts pendingTransitions={pendingTransitions
-            } setPendingTransitions={setPendingTransitions} />
+            children: <TransferAccounts activeKey={activeKey} pendingTransitions={pendingTransitions
+            } setPendingTransitions={(transaction)=>setPendingTransitions([...pendingTransitions,transaction])} />
         },
         {
             label: 'Mine',

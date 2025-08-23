@@ -1,9 +1,12 @@
-import React from 'react'
-import { Button, Row, Col, Card } from 'antd';
 import { useState } from 'react';
+import { Button, Row, Col, Card } from 'antd';
+import { useEffect } from 'react';
 
 function BlockChain({ pendingTransitions, blocks, refeshPendingTransactions, refeshBlock }) {
-  
+  useEffect(()=>{
+      refeshBlock();
+      refeshPendingTransactions();
+  },[])
     return (
         <div className='block_chain'>
             <header style={{textAlign:'center',fontSize:'22px', fontWeight:'600',padding:'24px 0'}}>Blockchain details</header>
@@ -49,11 +52,10 @@ function BlockChain({ pendingTransitions, blocks, refeshPendingTransactions, ref
                                     <Col span={4}>Nonce:</Col>
                                     <Col span={20} className='value'>{nonce}</Col>
                                 </Row>
-                                <Row>
+                                {/* <Row>
                                     <Col span={4}>Transaction Number:</Col>
                                     <Col span={20} className='value'>{transactionNum}</Col>
-                                </Row>
-
+                                </Row> */}
                             </Card>
                         })
                     }

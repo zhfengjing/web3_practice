@@ -12,14 +12,15 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-
+// 初始化区块链
 const chain = new BlockChain();
+// 存储创建的钱包账户
 const wallets = {};
 console.log('chain', chain);
 app.post('/createAccount', (req, res) => {
     const { accountName } = req.body;
     console.log('node-createACcounts', res.body);
-    const wallet = new Wallet();
+    const wallet = new Wallet(accountName);
     wallets[wallet.address] = wallet;
     return res.json({
         accountName,
@@ -28,6 +29,13 @@ app.post('/createAccount', (req, res) => {
         balance: chain.getBalanceOfAddress(wallet.address)
     })
 })
+
+// 获取钱包账户
+app.get('/wallets', (req, res) => {
+    res.json({
+        wallets,
+    });
+});
 
 // 获取钱包余额
 app.get('/wallets/:address/balance', (req, res) => {
@@ -68,7 +76,7 @@ app.post('/mine', (req, res) => {
     console.log('mine,chain', chain);
     // 如果没有待处理交易，添加一个测试交易
     if (chain.pendingTransactions.length === 0) {
-        chain.pendingTransactions.push(new Transaction(null, miningAddress, 1));
+        chain.pendingTransactions.push(new Transaction(null, miningAddress, 10));
     }
     console.log('开始挖矿...');
     chain.minePendingTransaction(miningAddress);

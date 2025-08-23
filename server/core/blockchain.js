@@ -5,7 +5,7 @@ class Blockchain {
     constructor() {
         this.chain = [this.createIniticalBlock()];
         this.difficulty = 2;
-        this.miningReword = 50;
+        this.miningReword = 10;
         this.pendingTransactions = [];
     }
     createIniticalBlock = () => {
@@ -43,7 +43,6 @@ class Blockchain {
 
     getBalanceOfAddress = address => {
         let balance = 0;
-
         for (const block of this.chain) {
             console.log('getabalance-block', block);
             for (const trans of block.transactions) {
